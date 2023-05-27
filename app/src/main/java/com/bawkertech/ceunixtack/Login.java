@@ -22,6 +22,10 @@ public class Login extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(binding.getRoot());
 
+        binding.loginButton.setOnClickListener(v -> {
+            Intent intent = new Intent(Login.this, Hometest.class);
+
+        });
 
         binding.signupScreen.setOnClickListener(v -> {
             Intent intentS = new Intent(Login.this, SignUp.class);

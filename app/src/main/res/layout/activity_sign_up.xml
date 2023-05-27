@@ -132,27 +132,29 @@
 
 
         <Button
+            android:id="@+id/button_signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SIN UP"
-            android:background="#000"
-            android:textColor="#fff"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:transitionName="button_tran"/>
+            android:background="#000"
+            android:text="SIN UP"
+            android:textColor="#fff"
+            android:transitionName="button_tran" />
 
 
         <Button
+            android:id="@+id/button_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#00000000"
-            android:text="Already Have an Account? LOgin"
-            android:fontFamily="@font/antic"
             android:layout_gravity="right"
-            android:elevation="0dp"
             android:layout_margin="5dp"
+            android:background="#00000000"
+            android:elevation="0dp"
+            android:fontFamily="@font/antic"
+            android:text="Already Have an Account? LOgin"
             android:textColor="#000"
-            android:transitionName="login_signup_tran"/>
+            android:transitionName="login_signup_tran" />
 
     </LinearLayout>
 
