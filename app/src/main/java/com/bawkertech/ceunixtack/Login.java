@@ -30,9 +30,12 @@ public class Login extends AppCompatActivity {
 
 
         binding.loginButton.setOnClickListener(v -> {
+            if (!validateUsername() | !validatePassword()) {
+                return;
+            }
 
-                    LoginTask loginTask = new LoginTask();
-                    loginTask.execute();
+            LoginTask loginTask = new LoginTask();
+            loginTask.execute();
 
         }
 
@@ -107,6 +110,39 @@ public class Login extends AppCompatActivity {
 
             return null;
         }
+    }
+
+    private boolean validateUsername() {
+        String username = binding.username.getText().toString();
+
+        if (username.isEmpty()) {
+            //show error
+            binding.username.setError("Username is required");
+            return false;
+        }
+        else {
+            binding.username.setError(null);
+//            binding.username.setErrorEnabled(false);
+            return true;
+        }
+
+
+    }
+
+    private boolean validatePassword() {
+        String password = binding.password.getText().toString();
+
+        if (password.isEmpty()) {
+            //show error
+            binding.password.setError("Password is required");
+            return false;
+        }
+        else {
+            binding.password.setError(null);
+//            binding.password.setErrorEnabled(false);
+            return true;
+        }
+
     }
 
 }
