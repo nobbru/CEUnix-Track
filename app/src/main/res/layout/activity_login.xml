@@ -7,9 +7,9 @@
     tools:context=".Login"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:background="#fff"
+    android:background="@color/white"
     android:padding="20dp">
-
+<!--#EA0D40, #EA0D40-->
     <ImageView
         android:id="@+id/logo_image"
         android:layout_width="150dp"
@@ -118,6 +118,27 @@
             android:textColor="#000"
             android:transitionName="login_signup_tran"/>
 
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/white_circle"
+            android:elevation="10dp"
+            android:layout_marginBottom="5dp">
+
+            <ProgressBar
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+
     </LinearLayout>
+
+
 
 </LinearLayout>
