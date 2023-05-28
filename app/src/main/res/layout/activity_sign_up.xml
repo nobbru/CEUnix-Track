@@ -19,6 +19,7 @@
         android:transitionName="logo_image" />
 
     <TextView
+        android:id="@+id/logo_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="-50dp"
@@ -31,6 +32,7 @@
 
 
     <TextView
+        android:id="@+id/slogan_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="-20dp"
