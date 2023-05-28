@@ -7,7 +7,7 @@
     <string name="password">Password</string>
     <string name="username">Username</string>
     <string name="sign_in_to_continue">Sign In to continue</string>
-    <string name="welcome_back">Hello there, Welcome Back</string>
+    <string name="welcome_back">Hello,\n Welcome Back</string>
     <string name="logo_text">LOGO</string>
     <string name="title_activity_hometest">Hometest</string>
     <!-- Strings used for fragments for navigation -->

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Login"
     android:orientation="vertical"
+    android:gravity="center_horizontal"
     android:background="#fff"
     android:padding="20dp">
 
@@ -21,6 +22,7 @@
         android:id="@+id/logo_text"
         android:layout_width="wrap_content"
         android:transitionName="logo_text"
+        android:layout_marginTop="-20dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/bungee"
         android:text="@string/welcome_back"
@@ -48,7 +50,6 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/username"
             android:hint="@string/username"
             android:textColorHint="@color/black"
             app:boxStrokeColor="@color/purple_500"
@@ -56,6 +57,8 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/username"
+                android:textColor="@color/purple_500"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -64,7 +67,6 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/password"
             android:hint="@string/password"
             android:textColorHint="@color/black"
             app:boxStrokeColor="@color/purple_500"
@@ -73,8 +75,12 @@
             android:transitionName="password_tran">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                app:passwordToggleEnabled="true"
+                android:textColor="@color/purple_500"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 

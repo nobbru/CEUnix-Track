@@ -6,35 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".SignUp"
     android:orientation="vertical"
+    android:gravity="center_horizontal"
     android:background="#fff"
     android:padding="20dp">
 
     <ImageView
+        android:id="@+id/logo_image"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:transitionName="logo_image"
         android:src="@drawable/_684755528feather_wings"
-        android:id="@+id/logo_image" />
+        android:scaleType="centerInside"
+        android:transitionName="logo_image" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="-50dp"
         android:fontFamily="@font/bungee"
         android:text="Welcome"
-        android:textSize="40sp"
-        android:layout_marginTop="-50dp"
+        android:textAlignment="center"
         android:textColor="@color/black"
+        android:textSize="40sp"
         android:transitionName="logo_text" />
 
 
     <TextView
-        android:layout_marginTop="-20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="-20dp"
         android:text="Sign In to speed your search"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="18sp"
-        android:transitionName="logo_desc"/>
+        android:transitionName="logo_desc" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -54,6 +58,7 @@
                 android:id="@+id/full_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/purple_500"
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -70,6 +75,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/purple_500"
                 android:id="@+id/username"
                 android:inputType="text"/>
 
@@ -87,6 +93,7 @@
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/purple_500"
                 android:inputType="textEmailAddress" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -102,6 +109,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/phone"
                 android:layout_width="match_parent"
+                android:textColor="@color/purple_500"
                 android:layout_height="wrap_content"
                 android:inputType="number" />
 
@@ -126,7 +134,9 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:textColor="@color/purple_500"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
