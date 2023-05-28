@@ -45,6 +45,9 @@ public class MissingPersonDatabaseHelper extends SQLiteOpenHelper {
         for (MissingPerson missingPerson : missingPersons) {
             ContentValues values = new ContentValues();
             values.put("name", missingPerson.getName());
+            values.put("age", missingPerson.getAge());
+            values.put("gender", missingPerson.getGender());
+            values.put("image_url", missingPerson.getImage());
             values.put("description", missingPerson.getDescription());
             values.put("last_known_location", missingPerson.getLastKnownLocation());
             values.put("date_of_disappearance", missingPerson.getDateOfDisappearance());

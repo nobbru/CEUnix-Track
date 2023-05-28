@@ -1,7 +1,5 @@
 package com.bawkertech.ceunixtack.models;
-import lombok.Data;
 
-@Data
 public class User {
 
     private String username;
