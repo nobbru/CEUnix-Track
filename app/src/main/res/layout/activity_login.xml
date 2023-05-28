@@ -6,9 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".Login"
     android:orientation="vertical"
-    android:background="#fff"
+    android:gravity="center_horizontal"
+    android:background="@color/white"
     android:padding="20dp">
-
+<!--#EA0D40, #EA0D40-->
     <ImageView
         android:id="@+id/logo_image"
         android:layout_width="150dp"
@@ -21,6 +22,7 @@
         android:id="@+id/logo_text"
         android:layout_width="wrap_content"
         android:transitionName="logo_text"
+        android:layout_marginTop="-20dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/bungee"
         android:text="@string/welcome_back"
@@ -48,7 +50,6 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/username"
             android:hint="@string/username"
             android:textColorHint="@color/black"
             app:boxStrokeColor="@color/purple_500"
@@ -56,6 +57,8 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/username"
+                android:textColor="@color/purple_500"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -64,7 +67,6 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/password"
             android:hint="@string/password"
             android:textColorHint="@color/black"
             app:boxStrokeColor="@color/purple_500"
@@ -73,8 +75,12 @@
             android:transitionName="password_tran">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                app:passwordToggleEnabled="true"
+                android:textColor="@color/purple_500"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -84,6 +90,7 @@
             android:background="#00000000"
             android:text="@string/forgot_password"
             android:layout_gravity="right"
+            android:textColor="@color/black"
             android:elevation="0dp"
             android:layout_margin="5dp"
             tools:ignore="RtlHardcoded" />
@@ -112,6 +119,27 @@
             android:textColor="#000"
             android:transitionName="login_signup_tran"/>
 
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/white_circle"
+            android:elevation="10dp"
+            android:layout_marginBottom="5dp">
+
+            <ProgressBar
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+
     </LinearLayout>
+
+
 
 </LinearLayout>

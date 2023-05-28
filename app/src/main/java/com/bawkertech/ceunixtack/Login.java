@@ -4,13 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Pair;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 
 import com.bawkertech.ceunixtack.databinding.ActivityLoginBinding;
+
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class Login extends AppCompatActivity {
     private ActivityLoginBinding binding;
@@ -19,9 +25,22 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(binding.getRoot());
 
+
+        binding.loginButton.setOnClickListener(v -> {
+                    if (!validateUsername() | !validatePassword()) {
+                        return;
+                    }
+
+                    LoginTask loginTask = new LoginTask();
+                    loginTask.execute();
+
+                }
+
+
+        );
 
         binding.signupScreen.setOnClickListener(v -> {
             Intent intentS = new Intent(Login.this, SignUp.class);
@@ -40,10 +59,86 @@ public class Login extends AppCompatActivity {
             startActivity(intentS, options.toBundle());
 
 
-
         });
 
 
+    }
+
+
+    private class LoginTask extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+
+            String username = binding.username.getText().toString();
+            String password = binding.password.getText().toString();
+
+            OkHttpClient client = new OkHttpClient();
+
+            MediaType mediaType = MediaType.parse("application/json");
+            String json = "{\"username\":\"" + username + "\",\"password\":\"" + password + "\"}";
+
+            RequestBody body = RequestBody.create(json, mediaType); //create(mediaType, json);
+
+
+            Request request = new Request.Builder()
+                    .url("http://192.168.8.176:5000/login")
+                    .post(body)
+                    .build();
+            try (Response response = client.newCall(request).execute()) {
+                String res = response.body().string();
+                System.out.println(res);
+
+                if (response.isSuccessful()) {
+                    System.out.println("hello test");
+
+
+                    //open new stuff
+
+                    Intent intent = new Intent(Login.this, Hometest.class);
+                    intent.putExtra("username", username);
+                    intent.putExtra("password", password);
+                    intent.putExtra("isLogin", true);
+                    startActivity(intent);
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+    }
+
+    private boolean validateUsername() {
+        String username = binding.username.getText().toString();
+
+        if (username.isEmpty()) {
+            //show error
+            binding.username.setError("Username is required");
+            return false;
+        } else {
+            binding.username.setError(null);
+//            binding.username.setErrorEnabled(false);
+            return true;
+        }
+
 
     }
+
+    private boolean validatePassword() {
+        String password = binding.password.getText().toString();
+
+        if (password.isEmpty()) {
+            //show error
+            binding.password.setError("Password is required");
+            return false;
+        } else {
+            binding.password.setError(null);
+//            binding.password.setErrorEnabled(false);
+            return true;
+        }
+
+    }
+
 }

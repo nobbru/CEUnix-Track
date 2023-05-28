@@ -1,0 +1,13 @@
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <!-- Trust system CAs -->
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">192.168.8.176</domain>
+        <domain includeSubdomains="true">localhost</domain>
+
+    </domain-config>
+</network-security-config>

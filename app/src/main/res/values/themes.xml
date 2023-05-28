@@ -15,4 +15,10 @@
 
         <item name="android:windowContentTransitions">true</item>
     </style>
+    <style name="Theme.CEUnixTack.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.CEUnixTack.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.CEUnixTack.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

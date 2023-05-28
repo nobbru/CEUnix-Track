@@ -19,14 +19,14 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final int SPLASH_SCREEN = 1000;
+    private static final int SPLASH_SCREEN = 6000;
 
     //Variables
 
     Animation topAnimation, bottomAnimation, rightAnimation;
 
     ImageView image;
-    TextView logo, slogan;
+    TextView logo, slogan, textView5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +43,13 @@ public class MainActivity extends AppCompatActivity {
         image = findViewById(R.id.imageView);
         logo = findViewById(R.id.textView);
         slogan = findViewById(R.id.textView2);
+        textView5 = findViewById(R.id.textView5);
 
         image.setAnimation(topAnimation);
         logo.setAnimation(bottomAnimation);
         slogan.setAnimation(bottomAnimation);
+        textView5.setAnimation(topAnimation);
+
 
         new Handler().postDelayed(() -> {
 
@@ -58,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, pairs);
 
                 startActivity(intent, options.toBundle());
-//                finish();
+                finish();
 
         }, SPLASH_SCREEN);
 
