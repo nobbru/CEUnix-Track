@@ -46,6 +46,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui:2.5.3'
     implementation 'com.squareup.okhttp3:okhttp-android:5.0.0-alpha.11'
     implementation 'org.projectlombok:lombok:1.18.28'
+    implementation 'org.testng:testng:6.9.6'
 //    implementation 'com.squareup.okhttp3:okhttp:3.14.9'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
