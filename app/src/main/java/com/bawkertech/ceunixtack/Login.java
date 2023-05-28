@@ -25,19 +25,19 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(binding.getRoot());
 
 
         binding.loginButton.setOnClickListener(v -> {
-            if (!validateUsername() | !validatePassword()) {
-                return;
-            }
+                    if (!validateUsername() | !validatePassword()) {
+                        return;
+                    }
 
-            LoginTask loginTask = new LoginTask();
-            loginTask.execute();
+                    LoginTask loginTask = new LoginTask();
+                    loginTask.execute();
 
-        }
+                }
 
 
         );
@@ -59,9 +59,7 @@ public class Login extends AppCompatActivity {
             startActivity(intentS, options.toBundle());
 
 
-
         });
-
 
 
     }
@@ -80,7 +78,7 @@ public class Login extends AppCompatActivity {
             MediaType mediaType = MediaType.parse("application/json");
             String json = "{\"username\":\"" + username + "\",\"password\":\"" + password + "\"}";
 
-            RequestBody body = RequestBody.create(json,mediaType); //create(mediaType, json);
+            RequestBody body = RequestBody.create(json, mediaType); //create(mediaType, json);
 
 
             Request request = new Request.Builder()
@@ -119,8 +117,7 @@ public class Login extends AppCompatActivity {
             //show error
             binding.username.setError("Username is required");
             return false;
-        }
-        else {
+        } else {
             binding.username.setError(null);
 //            binding.username.setErrorEnabled(false);
             return true;
@@ -136,8 +133,7 @@ public class Login extends AppCompatActivity {
             //show error
             binding.password.setError("Password is required");
             return false;
-        }
-        else {
+        } else {
             binding.password.setError(null);
 //            binding.password.setErrorEnabled(false);
             return true;
