@@ -1,4 +1,4 @@
-package com.bawkertech.ceunixtack.databases;
+package com.bawkertech.ceunixtack.models.databases;
 
 
 import android.content.ContentValues;

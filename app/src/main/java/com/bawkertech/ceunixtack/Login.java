@@ -12,6 +12,8 @@ import android.view.WindowManager;
 
 import com.bawkertech.ceunixtack.databinding.ActivityLoginBinding;
 
+import org.json.JSONArray;
+
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -82,14 +84,22 @@ public class Login extends AppCompatActivity {
 
 
             Request request = new Request.Builder()
-                    .url("http://192.168.8.176:5000/login")
+                    .url("http://192.168.8.176:5000/api/v1/login")
                     .post(body)
                     .build();
             try (Response response = client.newCall(request).execute()) {
                 String res = response.body().string();
                 System.out.println(res);
+                System.out.println(response.code());
+                System.out.println(response.isSuccessful());
+                System.out.println(response.message());
 
                 if (response.isSuccessful()) {
+                    clearFilds();
+//                    JSONArray jsonArray = new JSONArray(response.toString());
+                    System.out.println("It work till here");
+
+
                     System.out.println("hello test");
 
 
@@ -108,6 +118,11 @@ public class Login extends AppCompatActivity {
 
             return null;
         }
+    }
+
+    private void clearFilds() {
+        binding.username.clearComposingText();
+        binding.password.clearComposingText();
     }
 
     private boolean validateUsername() {

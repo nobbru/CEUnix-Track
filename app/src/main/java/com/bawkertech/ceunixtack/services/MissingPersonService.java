@@ -10,7 +10,7 @@ import android.content.Context;
 
 import android.os.AsyncTask;
 
-import com.bawkertech.ceunixtack.databases.MissingPersonDatabaseHelper;
+import com.bawkertech.ceunixtack.models.databases.MissingPersonDatabaseHelper;
 import com.bawkertech.ceunixtack.models.MissingPerson;
 
 import org.json.JSONArray;

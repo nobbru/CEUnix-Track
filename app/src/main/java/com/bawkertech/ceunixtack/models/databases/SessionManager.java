@@ -1,4 +1,4 @@
-package com.bawkertech.ceunixtack.databases;
+package com.bawkertech.ceunixtack.models.databases;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -13,16 +13,11 @@ public class SessionManager {
     Context context;
 
     private static final String IS_LOGIN = "IsLoggedIn";
-
     private static final String KEY_USERNAME = "username";
-
     private static final String KEY_PASSWORD = "password";
-
     private static final String KEY_EMAIL = "email";
-
-
+    private static final String KEY_TOKEN = "token";
     private static final String KEY_FULLNAME = "full_name";
-
     private static final String KEY_PHONENUMBER = "phone_number";
 
     public SessionManager(Context _context) {
@@ -31,13 +26,14 @@ public class SessionManager {
         editor = userSession.edit();
     }
 
-    public void createLoginSession(String username, String password, String email, String fullname, String phonenumber) {
+    public void createLoginSession(String username, String password, String email, String fullname, String phonenumber, String token) {
         editor.putBoolean(IS_LOGIN, true);
         editor.putString(KEY_USERNAME, username);
         editor.putString(KEY_PASSWORD, password);
         editor.putString(KEY_EMAIL, email);
         editor.putString(KEY_FULLNAME, fullname);
         editor.putString(KEY_PHONENUMBER, phonenumber);
+        editor.putString(KEY_TOKEN, token);
         editor.commit();
     }
 
@@ -49,6 +45,7 @@ public class SessionManager {
         userData.put(KEY_EMAIL, userSession.getString(KEY_EMAIL, null));
         userData.put(KEY_FULLNAME, userSession.getString(KEY_FULLNAME, null));
         userData.put(KEY_PHONENUMBER, userSession.getString(KEY_PHONENUMBER, null));
+        userData.put(KEY_TOKEN, userSession.getString(KEY_TOKEN, null));
 
         return userData;
     }
