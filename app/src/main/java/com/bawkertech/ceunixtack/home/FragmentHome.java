@@ -11,6 +11,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.bawkertech.ceunixtack.R;
 import com.bawkertech.ceunixtack.databinding.FragmentHomeBinding;
+import com.bawkertech.ceunixtack.home.missing.MissingFragment;
+import com.bawkertech.ceunixtack.home.post.PostFragment;
 import com.bawkertech.ceunixtack.home.feed.FeedFragment;
 
 public class FragmentHome extends Fragment {

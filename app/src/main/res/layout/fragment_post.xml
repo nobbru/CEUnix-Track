@@ -2,70 +2,161 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp">
 
-    <EditText
-        android:id="@+id/et_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Name" />
-
-    <EditText
-        android:id="@+id/et_age"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Age"
-        android:inputType="number" />
-
-    <EditText
-        android:id="@+id/et_gender"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Gender" />
-
-    <EditText
-        android:id="@+id/et_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Description"
-        android:inputType="textMultiLine" />
-
-    <EditText
-        android:id="@+id/et_last_known_location"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Last Known Location" />
-
-    <EditText
-        android:id="@+id/et_date_of_disappearance"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Date of Disappearance"
-        android:focusable="false"
-        android:onClick="showDatePicker" />
-
-    <Button
-        android:id="@+id/btn_select_date"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select Date"
-        android:layout_marginTop="8dp" />
-
-    <ImageView
-        android:id="@+id/iv_image"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:src="@drawable/placeholder_image"
+        android:textStyle="bold"
+        android:textColor="@color/orange"
+        android:text="Post Missing Person"
         android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp" />
+        android:textSize="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"/>
 
-    <Button
-        android:id="@+id/btn_post"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Post"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:textColorHint="@color/orange"
+            app:boxStrokeColor="@color/orange"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/post_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/orange"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Age"
+            android:transitionName="username_tran"
+            android:textColorHint="@color/orange"
+            app:boxStrokeColor="@color/orange"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/orange"
+                android:id="@+id/post_age"
+                android:inputType="text"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Gender"
+            android:textColorHint="@color/orange"
+            app:boxStrokeColor="@color/orange"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/post_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/purple_500"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Description"
+            android:textColorHint="@color/orange"
+            app:boxStrokeColor="@color/orange"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/post_description"
+                android:layout_width="match_parent"
+                android:textColor="@color/orange"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Last Know Location"
+            android:textColorHint="@color/orange"
+            app:boxStrokeColor="@color/orange"
+            app:passwordToggleEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:transitionName="password_tran">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/post_location"
+                android:layout_width="match_parent"
+                android:textColor="@color/orange"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Last Know Location"
+            android:textColorHint="@color/orange"
+            app:boxStrokeColor="@color/orange"
+            app:passwordToggleEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:transitionName="password_tran">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/post_date"
+                android:layout_width="match_parent"
+                android:textColor="@color/orange"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <Button
+            android:id="@+id/button_post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/orange"
+            android:text="Post"
+            android:textColor="#fff"
+            android:transitionName="button_tran" />
+    </LinearLayout>
+
+
+
+
+
+
 
 </LinearLayout>

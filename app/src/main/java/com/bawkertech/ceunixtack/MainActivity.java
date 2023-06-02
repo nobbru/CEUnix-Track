@@ -18,7 +18,7 @@ import com.bawkertech.ceunixtack.ui.auth.Login;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final int SPLASH_SCREEN = 100;
+    private static final int SPLASH_SCREEN = 4000;
 
     //Variables
 

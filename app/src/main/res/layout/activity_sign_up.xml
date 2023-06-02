@@ -26,7 +26,7 @@
         android:fontFamily="@font/bungee"
         android:text="Welcome"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/orange"
         android:textSize="40sp"
         android:transitionName="logo_text" />
 
@@ -38,7 +38,7 @@
         android:layout_marginTop="10dp"
         android:text="Sign In to speed your search"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/orange"
         android:textSize="18sp"
         android:transitionName="logo_desc" />
 
@@ -52,15 +52,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Full Name"
-            android:textColorHint="@color/black"
-            app:boxStrokeColor="@color/purple_500"
+            android:textColorHint="@color/orange"
+            app:boxStrokeColor="@color/orange"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/full_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/purple_500"
+                android:textColor="@color/orange"
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -70,14 +70,14 @@
             android:layout_height="wrap_content"
             android:hint="Username"
             android:transitionName="username_tran"
-            android:textColorHint="@color/black"
-            app:boxStrokeColor="@color/purple_500"
+            android:textColorHint="@color/orange"
+            app:boxStrokeColor="@color/orange"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/purple_500"
+                android:textColor="@color/orange"
                 android:id="@+id/username"
                 android:inputType="text"/>
 
@@ -87,8 +87,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
-            android:textColorHint="@color/black"
-            app:boxStrokeColor="@color/purple_500"
+            android:textColorHint="@color/orange"
+            app:boxStrokeColor="@color/orange"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -104,14 +104,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Phone Number"
-            android:textColorHint="@color/black"
-            app:boxStrokeColor="@color/purple_500"
+            android:textColorHint="@color/orange"
+            app:boxStrokeColor="@color/orange"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/phone"
                 android:layout_width="match_parent"
-                android:textColor="@color/purple_500"
+                android:textColor="@color/orange"
                 android:layout_height="wrap_content"
                 android:inputType="number" />
 
@@ -127,8 +127,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
-            android:textColorHint="@color/black"
-            app:boxStrokeColor="@color/purple_500"
+            android:textColorHint="@color/orange"
+            app:boxStrokeColor="@color/orange"
             app:passwordToggleEnabled="true"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:transitionName="password_tran">
@@ -136,7 +136,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
-                android:textColor="@color/purple_500"
+                android:textColor="@color/orange"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"/>
 
@@ -149,7 +149,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:background="#000"
+            android:background="@color/orange"
             android:text="SIN UP"
             android:textColor="#fff"
             android:transitionName="button_tran" />
@@ -165,7 +165,7 @@
             android:elevation="0dp"
             android:fontFamily="@font/antic"
             android:text="Already Have an Account? LOgin"
-            android:textColor="#000"
+            android:textColor="@color/orange"
             android:transitionName="login_signup_tran" />
 
     </LinearLayout>

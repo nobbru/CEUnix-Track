@@ -6,13 +6,12 @@ import android.content.SharedPreferences;
 
 import com.bawkertech.ceunixtack.App;
 import com.bawkertech.ceunixtack.R;
+import com.bawkertech.ceunixtack.models.MissingPerson;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by yarolegovich on 07.03.2017.
- */
 
 public class Feed {
 
@@ -29,14 +28,19 @@ public class Feed {
     }
 
     public List<Item> getData() {
-        return Arrays.asList(
-                new Item(1, "John Doe", "27/02/03", R.drawable._576774575wings_love_freesvg_org),
-                new Item(2, "John Doe", "27/02/03", R.drawable._576774575wings_love_freesvg_org),
-                new Item(3, "John Doe", "27/02/03", R.drawable._576774575wings_love_freesvg_org),
-                new Item(4, "John Doe", "27/02/03", R.drawable._576774575wings_love_freesvg_org),
-                new Item(5, "John Doe", "27/02/03", R.drawable._576774575wings_love_freesvg_org),
-                new Item(6, "John Doe", "27/02/03", R.drawable._576774575wings_love_freesvg_org));
+        List<Item> itemList = new ArrayList<>();
+        System.out.println(App.list.toString());
+        System.out.println(App.list.size());
+
+        int i = 1;
+        for (MissingPerson person : App.list) {
+            itemList.add(new Item(i, person.getName(), person.getDateOfDisappearance(),person.getImage_d()));
+            i++;
+        }
+
+        return itemList;
     }
+
 
     public boolean isRated(int itemId) {
         return storage.getBoolean(String.valueOf(itemId), false);

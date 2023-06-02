@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.TypedArray;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.WindowManager;
@@ -72,8 +73,12 @@ public class Home extends AppCompatActivity implements DrawerAdapter.OnItemSelec
 
         saveStateHandler = new LovelySaveStateHandler();
 
+//        binding.toolbar.getNavigationIcon().setTintMode(PorterDuff.Mode.SRC_ATOP);
+//        binding.toolbar.getNavigationIcon().setTintList(ContextCompat.getColorStateList(this, R.color.orange));
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+
 
         slidingRootNav = new SlidingRootNavBuilder(this)
                 .withDragDistance(180)
@@ -118,10 +123,10 @@ public class Home extends AppCompatActivity implements DrawerAdapter.OnItemSelec
 
     private DrawerItem createItemFor(int position) {
         return new SimpleItem(screenIcons[position], screenTitles[position])
-                .withIconTint(color(R.color.purple_500))
+                .withIconTint(color(R.color.orange))
                 .withTextTint(color(R.color.black))
-                .withSelectedIconTint(color(R.color.purple_500))
-                .withSelectedTextTint(color(R.color.purple_500));
+                .withSelectedIconTint(color(R.color.orange))
+                .withSelectedTextTint(color(R.color.orange));
 
 
     }
@@ -186,7 +191,7 @@ public class Home extends AppCompatActivity implements DrawerAdapter.OnItemSelec
 
                 ArrayAdapter<DonationOption> adapter = new DonationAdapter(this, loadDonationOptions());
                 new LovelyChoiceDialog(this)
-                        .setTopColorRes(R.color.purple_500)
+                        .setTopColorRes(R.color.orange)
                         .setTitle(R.string.donate_title)
                         .setInstanceStateHandler(position, saveStateHandler)
                         .setIcon(R.drawable.baseline_monetization_on_24)

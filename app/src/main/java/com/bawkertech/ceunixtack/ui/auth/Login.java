@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.bawkertech.ceunixtack.Hometest;
 import com.bawkertech.ceunixtack.databinding.ActivityLoginBinding;
 import com.bawkertech.ceunixtack.home.Home;
+import com.bawkertech.ceunixtack.services.MissingPersonService;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -30,7 +31,6 @@ public class Login extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(binding.getRoot());
 
-
         binding.loginButton.setOnClickListener(v -> {
                     if (!validateUsername() | !validatePassword()) {
                         return;
@@ -40,8 +40,6 @@ public class Login extends AppCompatActivity {
                     loginTask.execute();
 
                 }
-
-
         );
 
         binding.signupScreen.setOnClickListener(v -> {
@@ -96,12 +94,14 @@ public class Login extends AppCompatActivity {
                 System.out.println(response.message());
 
                 if (response.isSuccessful()) {
-                    clearFilds();
+//                    clearFilds();
 //                    JSONArray jsonArray = new JSONArray(response.toString());
                     System.out.println("It work till here");
 
 
                     System.out.println("hello test");
+                    Intent serviceIntent = new Intent(Login.this, MissingPersonService.class);
+                    startService(serviceIntent);
 
 
                     //open new stuff
@@ -123,6 +123,8 @@ public class Login extends AppCompatActivity {
     }
 
     private void clearFilds() {
+        binding.username.setEnabled(false);
+        binding.password.setEnabled(false);
         binding.username.clearComposingText();
         binding.password.clearComposingText();
     }
@@ -136,10 +138,9 @@ public class Login extends AppCompatActivity {
             return false;
         } else {
             binding.username.setError(null);
-//            binding.username.setErrorEnabled(false);
+            //binding.username.setErrorEnabled(false);
             return true;
         }
-
 
     }
 
@@ -152,7 +153,7 @@ public class Login extends AppCompatActivity {
             return false;
         } else {
             binding.password.setError(null);
-//            binding.password.setErrorEnabled(false);
+            //binding.password.setErrorEnabled(false);
             return true;
         }
 
