@@ -25,7 +25,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/bangers"
-        android:text="CEUnix Track"
+        android:text="CEUnix"
         android:textAlignment="center"
         android:textSize="70sp"
         android:textColor="@color/white"

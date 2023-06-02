@@ -8,17 +8,23 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/baseline_document_scanner_24"
+        android:icon="@drawable/ic_launcher_foreground"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
         android:theme="@style/Theme.CEUnixTack"
         android:usesCleartextTraffic="true"
+        android:name="com.bawkertech.ceunixtack.App"
         tools:targetApi="31">
+        <activity
+            android:name=".home.Home"
+            android:exported="true">
+        </activity>
+
         <receiver
             android:name=".services.MissingPersonAlarmReceiver"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true" />
 
         <service
             android:name=".services.MissingPersonService"
@@ -29,10 +35,10 @@
             android:name=".Hometest"
             android:exported="false" />
         <activity
-            android:name=".SignUp"
+            android:name=".ui.auth.SignUp"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".ui.auth.Login"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

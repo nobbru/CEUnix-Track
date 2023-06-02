@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="id_activityScreenTitles">
+        <item/>
+        <item>Home</item>
+        <item>My Profile</item>
+        <item>Donate</item>
+        <item>Settings</item>
+        <item/>
+        <item>Sign Out</item>
+    </string-array>
+
+    <array name="id_activityScreenIcons">
+        <item>@drawable/baseline_close_24</item>
+        <item>@drawable/baseline_maps_home_work_24</item>
+        <item>@drawable/baseline_person_24</item>
+        <item>@drawable/baseline_monetization_on_24</item>
+        <item>@drawable/baseline_settings_24</item>
+        <item/>
+        <item>@drawable/baseline_logout_24</item>
+    </array>
+
+    <string-array name="donations">
+        <item>Github%@vybraan</item>
+        <item>Buy me a coffe%@vybraan</item>
+    </string-array>
+</resources>
