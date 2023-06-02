@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Post"
+        android:icon="@drawable/baseline_maps_home_work_24"
+        android:id="@+id/post"/>
+
+    <item android:title="Feed"
+        android:id="@+id/feed"
+        android:icon="@drawable/baseline_maps_home_work_24"/>
+
+    <item android:title="Missing"
+        android:id="@+id/missing"
+    android:icon="@drawable/baseline_maps_home_work_24"/>
+</menu>

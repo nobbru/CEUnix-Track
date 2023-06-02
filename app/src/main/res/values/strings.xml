@@ -18,4 +18,46 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_login_test">LoginActivityTest</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="you_donated">"Thank you"</string>
+    <string name="donate_title">Donate?</string>
+    <string name="donate_message">Select an option please. You can choose either options to support my work! And i Hate android.</string>
+
+
+
+
+
+
+
+    <string name="preview_title_big_cards">Big cards</string>
+    <string name="preview_title_small_cards">Small cards</string>
+    <string name="preview_title_vertical">Vertical scroll</string>
+
+
+    <string name="pref_key_transition_time" translatable="false">pref_key_transition_time</string>
+
+    <string name="msg_no_browser">No app found to open the url</string>
+    <string name="msg_unsupported_op">Unsupported operation</string>
+
+
+
+    <string name="cd_back">Back</string>
+    <string name="cd_comment">Comment</string>
+
+
+
+
+
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
