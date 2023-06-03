@@ -10,6 +10,7 @@ import android.content.Context;
 
 import android.os.AsyncTask;
 
+import com.bawkertech.ceunixtack.App;
 import com.bawkertech.ceunixtack.models.databases.MissingPersonDatabaseHelper;
 import com.bawkertech.ceunixtack.models.MissingPerson;
 
@@ -27,7 +28,7 @@ import java.util.Calendar;
 import java.util.List;
 
 public class MissingPersonService extends Service {
-    private static final String API_URL = "http://192.168.8.176/api/missing_persons";
+    private static final String API_URL = "http://192.168.8.176:5000/api/v1/missing_persons";
     private static final long INTERVAL = 5 * 60 * 1000; // 5 minutes
     private static final int REQUEST_CODE = 123;
 
@@ -118,6 +119,8 @@ public class MissingPersonService extends Service {
                 e.printStackTrace();
             }
 
+            App.list = missingPersons;
+            App.setImages();
             return missingPersons;
         }
 

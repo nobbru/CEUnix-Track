@@ -1,5 +1,7 @@
 package com.bawkertech.ceunixtack.models;
 
+import android.graphics.drawable.Drawable;
+
 import java.io.Serializable;
 
 public class MissingPerson implements Serializable {
@@ -7,9 +9,26 @@ public class MissingPerson implements Serializable {
     private String age;
     private String gender;
     private String image;
+    private Drawable image_d;
     private String description;
     private String lastKnownLocation;
     private String dateOfDisappearance;
+
+    @Override
+    public String toString() {
+        return "MissingPerson{" +
+                "name='" + name + '\'' +
+                ", age='" + age + '\'' +
+                ", gender='" + gender + '\'' +
+                ", image='" + image + '\'' +
+                ", image_d=" + image_d +
+                ", description='" + description + '\'' +
+                ", lastKnownLocation='" + lastKnownLocation + '\'' +
+                ", dateOfDisappearance='" + dateOfDisappearance + '\'' +
+                '}';
+    }
+
+    public MissingPerson(){}
 
     public MissingPerson(String name, String age, String gender, String image, String description, String lastKnownLocation, String dateOfDisappearance) {
         this.name = name;
@@ -71,6 +90,14 @@ public class MissingPerson implements Serializable {
 
     public String getDateOfDisappearance() {
         return dateOfDisappearance;
+    }
+
+    public Drawable getImage_d() {
+        return image_d;
+    }
+
+    public void setImage_d(Drawable image_d) {
+        this.image_d = image_d;
     }
 
     public void setDateOfDisappearance(String dateOfDisappearance) {

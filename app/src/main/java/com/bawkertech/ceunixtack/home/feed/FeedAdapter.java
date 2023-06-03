@@ -15,10 +15,6 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-/**
- * Created by yarolegovich on 07.03.2017.
- */
-
 public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> {
 
     private List<Item> data;
@@ -37,9 +33,8 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Glide.with(holder.itemView.getContext())
-                .load(data.get(position).getImage())
-                .into(holder.image);
+        Item item = data.get(position);
+        holder.bind(item);
     }
 
     @Override
@@ -54,6 +49,12 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> {
         public ViewHolder(View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.image);
+        }
+
+        public void bind(Item item) {
+            Glide.with(itemView.getContext())
+                    .load(item.getImage())
+                    .into(image);
         }
     }
 }
